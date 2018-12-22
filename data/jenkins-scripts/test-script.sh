@@ -17,7 +17,7 @@ sudo su
 #jar file
 # $WORKSPACE is a jenkins var
 echo $WORKSPACE
-sourFile=$WORKSPACE/Test-Spring-Boot/target/test-0.0.1-SNAPSHOT.jar
+sourFile=$WORKSPACE/Test-Spring-Boot/target/Test-Spring-Boot-0.0.1-SNAPSHOT.jar
 echo $sourFile
 #destFile=/data/$environment/test-spring/test-0.0.1-SNAPSHOT.jar
 #echo $destFile
@@ -51,7 +51,7 @@ function run(){
 
 nohup nice java -jar $sourFile –server.port=$serverPort &
 
-echo "COMMAND: nohup nice java -jar $destFile "
+echo "COMMAND: nohup nice java -jar $sourFile "
 
 echo " "
 }
@@ -68,6 +68,6 @@ stopServer
 # 3 – copy files to deploy dir
 #copyFiles
 
-#changeFilePermission
+changeFilePermission
 # 4 – start server
 run
